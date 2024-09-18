@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<>
+<head>
+    <meta charset='utf-8'>
+    <title>英単語レベル</title>
+    <script>function getlevel(){
+        if(document.getElementById('word').value == "ziziidesu"){document.cookie = "yuki=True; path=/;";}else{
+        let req = new XMLHttpRequest();
+        req.addEventListener("load", function(){document.getElementById('info').textContent = this.responseText});
+        req.open("GET", "/answer?q="+document.getElementById('word').value);
+        req.send();}
+    }</script>
+</head>
+    単純な問題を出します<br>
+    このサイトを作ったscratchユーザーは誰？<br>
+    <input id="word" type="text"></input><input type="button" onClick="getlevel()">確認</input>
+    <div id="info">
+</body>
+</html>
